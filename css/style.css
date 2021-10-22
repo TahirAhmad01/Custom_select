@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+/* font-family: 'Sawarabi Gothic', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #8E2DE2;
+    background: linear-gradient(to right, #4A00E0, #8E2De2);
+    font-family: 'Sawarabi Gothic', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    color: #fff;
+    margin-bottom: 50px;
+    letter-spacing: .9px;
+    font-size: 2.5em;
+}
+
+.frame{
+    min-width: 400px;
+}
+
+.select-box{
+    width: 100%;
+    position: relative;
+}
+
+.select-box .option-container, .selected-body{
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    overflow: hidden;
+}
+
+.select-box .option-container{
+    position: absolute;
+    top: 43px;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    order: 1;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    border: 1px solid #ccc
+}
+
+.option{
+    border-bottom: 1px solid #eee;
+}
+
+.selected{
+    position: relative;
+    order: 0;
+    height: 40px;
+    border: none;
+}
+
+.selected i{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 27px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+
+.select-box .option-container.active + .selected-body .selected i{
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.select-box .option-container::-webkit-scrollbar{
+    width: 0px;
+    background-color: #ddd;
+}
+
+.select-box .option-container.active{
+    max-height: 200px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box .option, .selected{
+    padding: 7px 15px;
+    cursor: pointer;
+}
+
+.move.selected::after{
+    width: 100%;
+    z-index: 1;
+}
+
+.select-box .option:hover{
+    background-color: #2929290e;
+}
+
+.select-box label{
+    cursor: pointer;
+}
+
+.select-box .option .radio{
+    display: none;
+}
