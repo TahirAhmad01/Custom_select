@@ -6,7 +6,7 @@ $(function(){
         o.addEventListener("click",() => {
             selected.innerHTML = o.querySelector("label").innerHTML;
             $(".option-container").removeClass("active");
-            $(".elect-box").removeClass("move")
+            $(".select-box").removeClass("move")
         })
     })
 
